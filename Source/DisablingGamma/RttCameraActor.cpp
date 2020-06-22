@@ -50,9 +50,12 @@ void ARttCameraActor::PostInitializeComponents()
 	Super::PostInitializeComponents();
 
 	CameraMaterial = UMaterialInstanceDynamic::Create(CameraBaseMaterial, this);
+	if (TextureTarget)
+	{
+		TextureTarget->TargetGamma = 1.0;
+		TextureTarget->bForceLinearGamma = true;
 
-	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Blue, "setting texture parameter");
-
+	}
 	if (!Camera->TextureTarget && TextureTarget)
 	{
 		Camera->TextureTarget = TextureTarget;
