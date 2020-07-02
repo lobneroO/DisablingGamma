@@ -112,5 +112,13 @@ void UHudEditorBase::AddCamera(const ARttCameraActor* camera, const FVector2D po
 	img->Brush.Tiling = ESlateBrushTileType::NoTile;
 	img->Brush.Mirroring = ESlateBrushMirrorType::NoMirror;
 	img->Brush.DrawAs = ESlateBrushDrawType::Image;
-	img->Brush.ImageType = ESlateBrushImageType::Linear;
+	if (camera->bIsLinearColor)
+	{
+		img->Brush.ImageType = ESlateBrushImageType::Linear;
+	}
+	else
+	{
+		img->Brush.ImageType = ESlateBrushImageType::FullColor;
+	}
+	
 }

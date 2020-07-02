@@ -59,6 +59,9 @@ public:
 	UPROPERTY(VisibleAnywhere)
 	UMaterialInstanceDynamic* CameraMaterial = nullptr;
 
+	UPROPERTY(EditAnywhere)
+	bool bIsLinearColor = true;
+
 private:
 	/**
 	* Simple time tracker for movement with sin
