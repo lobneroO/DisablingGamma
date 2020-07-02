@@ -23,6 +23,7 @@ class DISABLINGGAMMA_API UHudEditorBase : public UUserWidget
 	virtual void NativeConstruct() override;
 	
 public:
+	UFUNCTION()
 	void OnToggleButtonClicked();
 
 protected:
